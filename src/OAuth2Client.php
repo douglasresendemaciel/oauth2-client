@@ -35,12 +35,12 @@ class OAuth2Client
     /**
      * @var string
      */
-    protected $cacheKeyPrefix = 'oauth2-client';
+    protected $cacheKeyPrefix = '';
 
     /**
      * @var string
      */
-    protected $cacheKey = 'oauth_tokens';
+    protected $cacheKey = '';
 
     /**
      * @var
@@ -571,6 +571,8 @@ class OAuth2Client
         $cacheKey = [];
         $cacheKey[] = $this->cacheKeyPrefix;
         $cacheKey[] = $this->cacheKey;
+        $cacheKey[] = 'oauth2-client';
+        $cacheKey[] = 'oauth_tokens';
         $cacheKey[] = $this->service;
         $cacheKey[] = $this->environment;
 
